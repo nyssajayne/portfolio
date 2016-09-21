@@ -1,0 +1,235 @@
+/*** Colours ***/
+/*** Fonts ***/
+/*** Resets ***/
+html,
+body,
+div,
+header,
+section,
+aside,
+footer,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  /* Font reset */
+
+}
+body {
+  /* Accomodating modern and older browsers, as per http://snook.ca/archives/html_and_css/font-size-with-rem */
+
+  font-size: 14px;
+  font-size: 1.4rem;
+  background-color: #ffffff;
+}
+ul li {
+  list-style-type: none;
+}
+input,
+textarea,
+select,
+a {
+  outline: none;
+}
+/***Common elements ***/
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+p,
+li {
+  font-family: 'Muli', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+p {
+  margin-bottom: 1rem;
+}
+.apple {
+  font-family: "Homemade Apple", cursive;
+  display: block;
+  margin-bottom: -8rem;
+}
+/*** Header ***/
+header {
+  padding: 10rem 0 3rem;
+  background-color: #062270;
+  text-align: center;
+  width: 100%;
+  transition: padding 500ms;
+  position: fixed;
+  z-index: 2;
+}
+header h1 {
+  font-size: 7.2rem;
+  font-weight: 700;
+}
+header h1 a:link,
+header h1 a:visited {
+  color: #e768ab;
+  text-decoration: none;
+}
+header h1 a:hover,
+header h1 a:active {
+  color: #ffd273;
+}
+header h2 {
+  font-size: 3.6rem;
+  color: #ffffff;
+  margin-bottom: 3.6rem;
+}
+header.tiny {
+  padding: 0 0 1rem;
+}
+/*** Navigation ***/
+nav:before {
+  content: ' ';
+  display: block;
+  height: 40rem;
+  transition: height 500ms;
+}
+nav {
+  background-color: #e768ab;
+  padding: 1.8rem;
+  width: 100%;
+  transition: padding 500ms;
+}
+nav ul {
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  font-size: 2.4rem;
+  padding: 0 2.4rem;
+}
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.static {
+  position: fixed;
+  top: 10rem;
+}
+.static:before {
+  height: 0rem;
+}
+/*** Content ***/
+.projects {
+  width: 100%;
+}
+.projects a {
+  float: left;
+  width: 50%;
+  display: block;
+  text-decoration: none;
+}
+.projects a:hover .project,
+.projects a:active .project {
+  border-color: #ffd273;
+}
+.projects .project {
+  margin: 1.8rem;
+  padding: 1.8rem;
+  border: 0.3rem solid #062270;
+}
+.projects .project img {
+  max-width: 100%;
+  height: auto;
+}
+.projects .project h2 {
+  margin-top: 1.2rem;
+  font-size: 2.4rem;
+  color: #e768ab;
+  text-align: center;
+}
+.push:before {
+  content: ' ';
+  display: block;
+  height: 40rem;
+}
+/*** Project Page ***/
+.single .projects,
+.page .projects {
+  max-width: 96rem;
+  margin: auto;
+  padding: 3.6rem 0;
+}
+.single .projects h2,
+.page .projects h2 {
+  margin-bottom: 2.4rem;
+  color: #062270;
+}
+/*** Footer ***/
+footer {
+  clear: both;
+  padding: 5rem 0 2rem;
+  background-color: #062270;
+  text-align: center;
+}
+footer .accordion {
+  display: none;
+}
+footer p {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-style: italic;
+  text-transform: lowercase;
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 2rem 0 3rem;
+  }
+  header h1 {
+    font-size: 4rem;
+  }
+  header h2 {
+    font-size: 2rem;
+  }
+  footer .accordion {
+    display: inline-block;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+  footer .accordion h3 {
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    clear: both;
+  }
+  footer .accordion a:link,
+  footer .accordion a:visited {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  footer .accordion a:hover,
+  footer .accordion a:active {
+    color: #ffd273;
+  }
+  footer .accordion .fa {
+    width: 2.5rem;
+  }
+  footer .accordion .fa-angle-down {
+    float: right;
+    text-align: right;
+  }
+  footer .accordion ul {
+    margin-bottom: 3rem;
+    display: inline-block;
+  }
+}
