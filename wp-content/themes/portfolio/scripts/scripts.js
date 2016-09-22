@@ -9,35 +9,23 @@
 			$(this).html(wordArray.join(" "));
 		  }
 		});
-
-		var height = $(window).height();
-		var small_height = $('#heading h1').height();
-
-		if($('body').hasClass('home') != 0) {
-			$('#heading').css('height', height);
-		}
 			
-		$(window).scroll(function() {
-			if($('body').hasClass('home') != 0) {
-
-				if($(document).scrollTop() >= 70) {
-				
-					$('.subheading').slideUp();
-					$('#heading, .header_wrapper').addClass('tiny');
-					$('#heading').css('height', small_height);
-					$('.wrapper').addClass('push');
+		if($('body').hasClass('home') != 0) {
+			$(window).scroll(function() {
+				if($(document).scrollTop() >= 70) {	
+					$('.subheading').slideUp(400, function () {
+						$("#heading, nav").addClass('tiny');
+						$('.wrapper').addClass('push');
+					});
 				}
 				else {
-					$('#heading, .header_wrapper').removeClass('tiny');
-					//$('nav').removeClass('static');
+					$("#heading, nav").removeClass('tiny');
 					$('.wrapper').removeClass('push');
 					$('.subheading').slideDown();
-					$('#heading').css('height', height);
 				}
-			}
-
-			//console.log($('nav').scrollTop());
-		});
+				//console.log($('nav').scrollTop());
+			});
+		}
 			
 		//http://css-tricks.com/snippets/jquery/simple-jquery-accordion/
 		var allPanels = $('.accordion > ul').hide();

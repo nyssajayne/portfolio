@@ -1,18 +1,16 @@
+<?php /* Template Name: Single Page */ ?>
+
 <?php get_header(); ?>
 
-<div class="singlepage_heading">
-
-	<header id="heading">
+<header id="heading" class="tiny">
 				
-		<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+	<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		
-	</header>
+</header>
 
-	<?php print_menu(); ?>
+	<?php print_menu('tiny'); ?>
 
-</div>
-
-<div class="wrapper">
+<div class="wrapper push">
 
 <div class="content">
 

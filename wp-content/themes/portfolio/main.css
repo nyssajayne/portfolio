@@ -81,10 +81,12 @@ header {
   text-align: center;
   width: 100%;
   transition: height 500ms;
+  z-index: 2;
 }
 header h1 {
   font-size: 7.2rem;
   font-weight: 700;
+  transition: font-size 400ms;
 }
 header h1 a:link,
 header h1 a:visited {
@@ -106,16 +108,18 @@ header h2 {
 }
 header.tiny {
   padding: 0 0 1rem;
-}
-.header_wrapper.tiny {
   position: fixed;
+}
+header.tiny h1 {
+  font-size: 3.6rem;
 }
 /*** Navigation ***/
 nav {
   background-color: #e768ab;
-  padding: 1.8rem;
+  padding: 1.8rem 0;
   width: 100%;
   transition: padding 500ms;
+  z-index: 2;
 }
 nav ul {
   text-align: center;
@@ -126,6 +130,7 @@ nav ul li {
   text-align: center;
   font-size: 2.4rem;
   padding: 0 2.4rem;
+  transition: font-size 400ms;
 }
 nav ul li a,
 nav ul li a:visited,
@@ -134,12 +139,13 @@ nav ul li a:active {
   color: #ffffff;
   text-decoration: none;
 }
-.static {
+nav.tiny {
   position: fixed;
-  top: 10rem;
+  top: 5.6rem;
+  width: 100%;
 }
-.static:before {
-  height: 0rem;
+nav.tiny ul li {
+  font-size: 1.6rem;
 }
 .wrapper {
   max-width: 102.4rem;
@@ -149,8 +155,8 @@ nav ul li a:active {
 .push:before {
   content: ' ';
   display: block;
-  height: 48rem;
-  transition: display 400ms;
+  height: 36rem;
+  transition: height 400ms;
 }
 .content {
   max-width: 96rem;
@@ -183,12 +189,6 @@ nav ul li a:active {
 .content .required {
   color: #e768ab;
 }
-.content:before {
-  content: ' ';
-  display: block;
-  height: 17.2rem;
-  clear: both;
-}
 #projects {
   width: 100%;
 }
@@ -217,26 +217,14 @@ nav ul li a:active {
   text-align: center;
 }
 /*** Project Page ***/
-.single .singlepage_heading,
-.page .singlepage_heading {
-  position: fixed;
-  height: 40rem;
-  width: 100%;
-}
-.single .singlepage_heading #heading,
-.page .singlepage_heading #heading {
-  padding: 0 0 1rem;
-}
-.single .content,
-.page .content {
-  max-width: 96rem;
-  margin: auto;
-  padding: 3.6rem 0;
-}
 .single .content h2,
 .page .content h2 {
   margin-bottom: 2.4rem;
   color: #062270;
+}
+.single .push:before,
+.page .push:before {
+  height: 12rem;
 }
 /*** Footer ***/
 footer {
@@ -255,7 +243,25 @@ footer p {
   font-style: italic;
   text-transform: lowercase;
 }
+footer li {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+  color: #ffffff;
+  min-width: 9.6rem;
+}
+footer li a,
+footer li a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer li a:hover,
+footer li a:active {
+  color: #e768ab;
+}
 @media screen and (max-width: 768px) {
+  body {
+    background-color: #062270;
+  }
   header {
     padding: 2rem 0 3rem;
   }
@@ -265,35 +271,28 @@ footer p {
   header h2 {
     font-size: 2rem;
   }
-  footer .accordion {
-    display: inline-block;
-    color: #ffffff;
-    margin-bottom: 3rem;
-    text-align: left;
+  header .apple {
+    margin-bottom: -4rem;
   }
-  footer .accordion h3 {
-    margin-bottom: 0.8rem;
-    cursor: pointer;
-    clear: both;
+  nav ul li {
+    font-size: 1.6rem;
   }
-  footer .accordion a:link,
-  footer .accordion a:visited {
-    text-decoration: none;
-    color: #ffffff;
+  .content:before {
+    height: 12rem;
   }
-  footer .accordion a:hover,
-  footer .accordion a:active {
-    color: #ffd273;
+  .wrapper {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    background-color: #ffffff;
   }
-  footer .accordion .fa {
-    width: 2.5rem;
+  .home .content:before {
+    height: 2.4rem;
   }
-  footer .accordion .fa-angle-down {
-    float: right;
-    text-align: right;
+  #projects {
+    padding-bottom: 2.4rem;
   }
-  footer .accordion ul {
-    margin-bottom: 3rem;
-    display: inline-block;
+  #projects a {
+    display: block;
+    width: 100%;
   }
 }
