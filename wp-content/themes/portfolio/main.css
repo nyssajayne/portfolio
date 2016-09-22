@@ -15,7 +15,9 @@ h4,
 p,
 ul,
 ol,
-li {
+li,
+input,
+textarea {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -58,6 +60,15 @@ li {
 p {
   margin-bottom: 1rem;
 }
+a,
+a:visited {
+  color: #062270;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #e768ab;
+}
 .apple {
   font-family: "Homemade Apple", cursive;
   display: block;
@@ -69,9 +80,7 @@ header {
   background-color: #062270;
   text-align: center;
   width: 100%;
-  transition: padding 500ms;
-  position: fixed;
-  z-index: 2;
+  transition: height 500ms;
 }
 header h1 {
   font-size: 7.2rem;
@@ -91,16 +100,17 @@ header h2 {
   color: #ffffff;
   margin-bottom: 3.6rem;
 }
+.header_wrapper {
+  width: 100%;
+  z-index: 2;
+}
 header.tiny {
   padding: 0 0 1rem;
 }
-/*** Navigation ***/
-nav:before {
-  content: ' ';
-  display: block;
-  height: 40rem;
-  transition: height 500ms;
+.header_wrapper.tiny {
+  position: fixed;
 }
+/*** Navigation ***/
 nav {
   background-color: #e768ab;
   padding: 1.8rem;
@@ -117,7 +127,10 @@ nav ul li {
   font-size: 2.4rem;
   padding: 0 2.4rem;
 }
-nav ul li a {
+nav ul li a,
+nav ul li a:visited,
+nav ul li a:hover,
+nav ul li a:active {
   color: #ffffff;
   text-decoration: none;
 }
@@ -128,49 +141,100 @@ nav ul li a {
 .static:before {
   height: 0rem;
 }
+.wrapper {
+  max-width: 102.4rem;
+  margin: auto;
+}
 /*** Content ***/
-.projects {
+.push:before {
+  content: ' ';
+  display: block;
+  height: 48rem;
+  transition: display 400ms;
+}
+.content {
+  max-width: 96rem;
+  margin: auto;
+}
+.content h2 {
+  color: #062270;
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+.content input,
+.content textarea {
+  width: 100%;
+  padding: 1.2rem;
+  border: 0.1rem solid #062270;
+  margin-bottom: 1.2rem;
+  font-family: "Muli", sans-serif;
+}
+.content input[type="submit"] {
+  color: #062270;
+  background-color: #ffffff;
+  font-size: 1.6rem;
+}
+.content input[type="submit"]:hover,
+.content input[type="submit"]:active {
+  border-color: #e768ab;
+  color: #e768ab;
+  cursor: pointer;
+}
+.content .required {
+  color: #e768ab;
+}
+.content:before {
+  content: ' ';
+  display: block;
+  height: 17.2rem;
+  clear: both;
+}
+#projects {
   width: 100%;
 }
-.projects a {
-  float: left;
-  width: 50%;
-  display: block;
+#projects a {
+  width: 48%;
+  display: inline-block;
   text-decoration: none;
 }
-.projects a:hover .project,
-.projects a:active .project {
+#projects a:hover .project,
+#projects a:active .project {
   border-color: #ffd273;
 }
-.projects .project {
+#projects .project {
   margin: 1.8rem;
   padding: 1.8rem;
   border: 0.3rem solid #062270;
 }
-.projects .project img {
+#projects .project img {
   max-width: 100%;
   height: auto;
 }
-.projects .project h2 {
+#projects .project h2 {
   margin-top: 1.2rem;
   font-size: 2.4rem;
   color: #e768ab;
   text-align: center;
 }
-.push:before {
-  content: ' ';
-  display: block;
-  height: 40rem;
-}
 /*** Project Page ***/
-.single .projects,
-.page .projects {
+.single .singlepage_heading,
+.page .singlepage_heading {
+  position: fixed;
+  height: 40rem;
+  width: 100%;
+}
+.single .singlepage_heading #heading,
+.page .singlepage_heading #heading {
+  padding: 0 0 1rem;
+}
+.single .content,
+.page .content {
   max-width: 96rem;
   margin: auto;
   padding: 3.6rem 0;
 }
-.single .projects h2,
-.page .projects h2 {
+.single .content h2,
+.page .content h2 {
   margin-bottom: 2.4rem;
   color: #062270;
 }

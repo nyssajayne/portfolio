@@ -1,56 +1,88 @@
-<?php get_header( ); ?>
+<?php get_header(); ?>
 
-<div id="container2">
-	<div id="container1">
-<?php get_sidebar( ); ?>
+<div class="header_wrapper">
 
-		<div id="left-side">
+			<header id="heading">
+				
+				<h2 class="subheading"><span class="apple">Hello!</span><br />
+					My name is Nyssa Jayne<br />
+					and these are some of the things I've made.</h2>
+				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+		
+			</header>
+
+			<?php print_menu(); ?>
+
+	</div>
+
+<div class="wrapper">
+
+<div id="about" class="content">
+
+	<h2><?php echo get_post(2)->post_title; ?></h2>
+	<?php echo apply_filters('the_content', get_post(2)->post_content); ?>
+
+</div>
+
+<div id="projects" class="content">
+
+	<h2>Projects</h2>
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post() ?>
 
-			<article>
-			
-				<h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
-				
-				<section class="metadata">
-					<h2><time pubdate><?php the_date(); ?></time></h2>
-				</section>
-			
-				<section class="text">
+	<a href="<?php echo get_the_permalink(); ?>">
+		<div class="project">
 
-					<?php the_content(); ?>
-				
-				</section>
-				
-				<section class="metadata">
-				
-					<h3><?php comments_popup_link( 'no comments', 'one comment', '% comments'); ?> </h3>
-					
-					<?php if(has_category()): ?>
-					<h3>filed under <?php the_category(', ') ?></h3>
-					<?php endif; ?>
-					
-					<?php if(has_tag()): ?>
-						<h3>tagged <?php the_tags(' ', ', ') ?></h3>
-					<?php endif; ?>
-					
-					<span class="fa fa-paw fa-1x"></span>
-					
-				</section>
-				
-			</article>
-			
-<?php endwhile; ?>
-
-			<section class="prev-next-nav">
-				
-				<h3><?php posts_nav_link(' | ', '<i class="fa fa-long-arrow-left"></i> Previous', 'Next <i class="fa fa-long-arrow-right"></i>'); ?></h3>
-				
-			</section>
-			
-<?php endif; ?>
+			<?php echo get_the_post_thumbnail(); ?>
+			<h2><?php echo get_the_title(); ?></h2>
 
 		</div>
-	</div>
+	</a>
+
+<?php endwhile; endif;?>
+
 </div>
+
+<div id="contact" class="content">
+
+	<h2><?php echo get_post(7)->post_title; ?></h2>
+	<?php echo apply_filters('the_content', get_post(7)->post_content); ?>
+
+</div>
+
+</div>
+
+		<footer id="footer">
+			<div class="accordion">
+				<dt><h3><span class="fa fa-group"></span> Social Media <i class="fa fa-angle-down"></i></h3></dt>
+				<ul>
+					<li><span class="fa fa-twitter"></span> <a href="http://www.twitter.com/nyssajayne">Twitter</a></li>
+					<li><span class="fa fa-instagram"></span> <a href="http://instagram.com/nyssajayne">Instagram</a></li>
+					<li><span class="fa fa-rss"></span> <a href="http://shoesandblues.com/?feed=rss2">RSS</a></li>
+					<li><span class="fa fa-heart"></span> <a href="http://www.bloglovin.com/en/blog/3590373">Bloglovin'</a></li>
+					<li><span class="fa fa-cut"></span> <a href="http://www.ravelry.com/nyssajayne">Ravelry</a></li>
+					<li><span class="fa fa-github"></span> <a href="http://www.github.com/nyssajayne">Github</a></li>
+				</ul>
+				
+				<dt><h3><span class="fa fa-bookmark-o"></span> Categories <i class="fa fa-angle-down"></i></h3></dt>
+				<ul>
+					<?php wp_list_cats(); ?>
+				</ul>
+				
+				<dt><h3><span class="fa fa-calendar-o"></span> Archives <i class="fa fa-angle-down"></i></h3></dt>
+				<ul>
+					<?php wp_get_archives( 'type=monthly' ); ?> 
+				</ul>
+				
+				<dt><h3><span class="fa fa-desktop"></span> Favourite Blogs <i class="fa fa-angle-down"></i></h3></dt>
+				<ul>
+					<?php wp_list_bookmarks('title_li=&categorize=0'); ?> 
+				</ul>
+			</div>
 		
-<?php get_footer( ); ?>
+			<p>All the content is mine, unless mentioned.<br>
+			Any questions, feel free to email me -  nyssajayne@gmail.com</p>
+		
+		</footer>
+
+<?php get_footer(); ?>

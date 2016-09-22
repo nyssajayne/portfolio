@@ -9,22 +9,31 @@
 			$(this).html(wordArray.join(" "));
 		  }
 		});
+
+		var height = $(window).height();
+		var small_height = $('#heading h1').height();
+
+		if($('body').hasClass('home') != 0) {
+			$('#heading').css('height', height);
+		}
 			
 		$(window).scroll(function() {
-			if($(document).scrollTop() >= 70) {
+			if($('body').hasClass('home') != 0) {
+
+				if($(document).scrollTop() >= 70) {
 				
-				$('.subheading').slideUp(400, 
-					function(){
-						$('nav').addClass('static');
-				$('#heading').addClass('tiny');
-				$('.projects').addClass('push');
-					});
-			}
-			else {
-				$('#heading').removeClass('tiny');
-				$('nav').removeClass('static');
-				$('.projects').removeClass('push');
+					$('.subheading').slideUp();
+					$('#heading, .header_wrapper').addClass('tiny');
+					$('#heading').css('height', small_height);
+					$('.wrapper').addClass('push');
+				}
+				else {
+					$('#heading, .header_wrapper').removeClass('tiny');
+					//$('nav').removeClass('static');
+					$('.wrapper').removeClass('push');
 					$('.subheading').slideDown();
+					$('#heading').css('height', height);
+				}
 			}
 
 			//console.log($('nav').scrollTop());
