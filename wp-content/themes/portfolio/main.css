@@ -52,7 +52,9 @@ h4 {
   font-weight: 400;
 }
 p,
-li {
+li,
+.wpcf7-validation-errors,
+.wpcf7-response-output {
   font-family: 'Muli', sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -166,6 +168,7 @@ nav.tiny ul li {
   color: #062270;
   font-size: 2.4rem;
   margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
 }
 .content input,
 .content textarea {
@@ -186,8 +189,27 @@ nav.tiny ul li {
   color: #e768ab;
   cursor: pointer;
 }
-.content .required {
+.content .required,
+.content .wpcf7-not-valid-tip {
   color: #e768ab;
+}
+.content .wpcf7-response-output {
+  margin-left: 0;
+  margin-right: 0;
+  border-width: 0.1rem;
+}
+.content .wpcf7-validation-errors {
+  border-color: #ffd273;
+}
+.content .wpcf7-mail-sent-ok {
+  border-color: #062270;
+}
+.content .wpcf7-mail-sent-ng {
+  border-color: #e768ab;
+}
+.content img {
+  max-width: 100%;
+  height: auto;
 }
 #projects {
   width: 100%;

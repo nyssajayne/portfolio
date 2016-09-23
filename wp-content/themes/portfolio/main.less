@@ -42,7 +42,7 @@ h1, h2, h3, h4 {
 	font-weight: 400;
 }
 
-p, li {
+p, li, .wpcf7-validation-errors, .wpcf7-response-output {
 	font-family: 'Muli', sans-serif;
 	font-weight: 400;
 	font-size: 1.6rem;
@@ -170,6 +170,7 @@ nav.tiny {
 		color: @navy;
 		font-size: 2.4rem;
 		margin-bottom: 1.2rem;
+		margin-top: 1.2rem;
 	}
 
 	input, textarea {
@@ -192,8 +193,31 @@ nav.tiny {
 		cursor: pointer;
 	}
 
-	.required {
+	.required, .wpcf7-not-valid-tip {
 		color: @pink;
+	}
+
+	.wpcf7-response-output {
+		margin-left: 0;
+		margin-right: 0;
+		border-width: 0.1rem;
+	}
+
+	.wpcf7-validation-errors {
+		border-color: @orange;
+	}
+
+	.wpcf7-mail-sent-ok {
+		border-color: @navy;
+	}
+
+	.wpcf7-mail-sent-ng {
+		border-color: @pink;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
 	}
 }
 
